@@ -2,10 +2,12 @@
 
 import { useState, useEffect, useRef } from "react";
 import Links from "./Links";
+import Image from "next/image";
 import { IoSearchOutline } from "react-icons/io5";
 import { FaRegMoon } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
-
+import { CgProfile } from "react-icons/cg";
+import avatar from "@/images/avatar.jpg";
 function Navbar() {
   const [isOpen, setIsOpen] = useState();
   const sidebarRef = useRef(null);
@@ -53,7 +55,7 @@ function Navbar() {
     <div className=" flex  justify-between items-center py-4 ">
       <div
         ref={sidebarRef}
-        className={`h-screen bg-white z-40 absolute p-0 left-0 top-0 transition-all duration-300 ease-in-out ${
+        className={` fixed h-screen bg-white z-40  p-0 left-0 top-0 transition-all duration-300 ease-in-out ${
           isOpen ? "w-[200px]" : "w-0"
         }`}
       >
@@ -94,8 +96,21 @@ function Navbar() {
               placeholder="search for you product..."
             />
           </li>
-          <li>
-            <FaRegMoon />
+
+          <li className="flex items-center space-x-7 text-gray-700">
+            <span className="p-3 relative w-6 h-6">
+              {" "}
+              {/* Define specific width and height here */}
+              <Image
+                src={avatar}
+                layout="fill"
+                objectFit="cover"
+                className="absolute rounded-full"
+              />
+            </span>
+            <span>
+              <FaRegMoon />
+            </span>
           </li>
         </ul>
       </div>
