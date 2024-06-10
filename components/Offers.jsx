@@ -13,12 +13,14 @@ function Offers() {
           <Image
             src={offerImg} // Path from the public directory
             alt="Special Offer"
-            width={140} // Adjust width as needed
-            height={140} // Adjust height as needed
-            className="absolute right-[-8px] top-[-30px]"
+            width={0} // Adjust width as needed
+            height={0} // Adjust height as needed
+            className="absolute right-[-8px] top-[-30px] w-36 md:w-28 lg:w-40 sm:hidden md:flex"
           />
           <div className="p-4 text-white">
-            <h3 className="text-2xl font-semibold">Nike caprice</h3>
+            <h3 className="text-2xl md:text-sm lg:text-2xl font-semibold">
+              Nike caprice
+            </h3>
             <p>
               <span className="text-3xl font-semibold">10%</span>
               <br />
@@ -31,12 +33,14 @@ function Offers() {
           <Image
             src={offerImg2} // Path from the public directory
             alt="Special Offer"
-            width={270} // Adjust width as needed
-            height={270} // Adjust height as needed
-            className="absolute right-[-40px] top-[-60px]"
+            width={0} // Adjust width as needed
+            height={0} // Adjust height as needed
+            className="absolute right-[-40px] top-[-55px] w-64 sm:hidden md:flex md:w-48 lg:w-64"
           />
           <div className="p-4 text-white">
-            <h3 className="text-2xl font-semibold">Jacket zara</h3>
+            <h3 className=" font-semibold text-2xl md:text-sm lg:text-2xl">
+              Jacket zara
+            </h3>
             <p>
               <span className="text-xl font-medium">New arrivals</span>
               <br />
@@ -49,12 +53,12 @@ function Offers() {
           <Image
             src={offerImg3} // Path from the public directory
             alt="Special Offer"
-            width={140} // Adjust width as needed
-            height={140} // Adjust height as needed
-            className="absolute right-[-8px] top-[-65px]"
+            width={0} // Adjust width as needed
+            height={0} // Adjust height as needed
+            className="absolute right-[-8px] top-[-65px] w-40 sm:w-32 md:w-32 lg:w-40 sm:hidden md:flex"
           />
           <div className="p-4 text-white">
-            <h3 className="text-xl font-semibold">
+            <h3 className="font-semibold text-2xl md:text-sm lg:text-2xl">
               Climax cruz
               <br /> <span>in pink</span>
             </h3>
@@ -64,9 +68,6 @@ function Offers() {
               </span>
               <br />
             </p>
-            <button className="text-xs border-2 px-3 py-1 rounded-lg border-gray-100 mt-2">
-              Show more
-            </button>
           </div>
         </div>
       </div>
