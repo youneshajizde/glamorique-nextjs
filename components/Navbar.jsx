@@ -53,11 +53,11 @@ function Navbar() {
     <div className=" flex  justify-between items-center py-4 ">
       <div
         ref={sidebarRef}
-        className={`h-screen bg-white z-40 absolute p-4 left-0 top-0 transition-all duration-300 ease-in-out ${
+        className={`h-screen bg-white z-40 absolute p-0 left-0 top-0 transition-all duration-300 ease-in-out ${
           isOpen ? "w-[200px]" : "w-0"
         }`}
       >
-        <ul className={`${isOpen ? "flex" : "hidden"} flex-col space-y-5`}>
+        <ul className={`${isOpen ? "flex" : "hidden"} flex-col space-y-5 p-4`}>
           <li className="font-semibold">
             <span className="text-blue-700">Glam</span>orique
           </li>
