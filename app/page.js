@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Offers from "@/components/Offers";
+import Products from "@/components/Products";
 
 export default function Home() {
   return (
@@ -7,6 +8,8 @@ export default function Home() {
       <Navbar />
 
       <Offers />
+
+      <Products />
     </main>
   );
 }

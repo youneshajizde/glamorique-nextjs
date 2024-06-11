@@ -3,10 +3,12 @@
 import { useState, useEffect, useRef } from "react";
 import Links from "./Links";
 import Image from "next/image";
-import { IoSearchOutline } from "react-icons/io5";
-import { FaRegMoon } from "react-icons/fa";
-import { IoMenu } from "react-icons/io5";
-import { CgProfile } from "react-icons/cg";
+import {
+  IoSearchOutline,
+  IoMenu,
+  FaRegMoon,
+  CgProfile,
+} from "@/lib/necessities.js"; // Import icons from the new file
 import avatar from "@/images/avatar.jpg";
 function Navbar() {
   const [isOpen, setIsOpen] = useState();
