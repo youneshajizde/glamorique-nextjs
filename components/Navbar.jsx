@@ -2,10 +2,14 @@
 
 import { useState, useEffect, useRef } from "react";
 import Links from "./Links";
-import { IoSearchOutline } from "react-icons/io5";
-import { FaRegMoon } from "react-icons/fa";
-import { IoMenu } from "react-icons/io5";
-
+import Image from "next/image";
+import {
+  IoSearchOutline,
+  IoMenu,
+  FaRegMoon,
+  CgProfile,
+} from "@/lib/necessities.js"; // Import icons from the new file
+import avatar from "@/images/avatar.jpg";
 function Navbar() {
   const [isOpen, setIsOpen] = useState();
   const sidebarRef = useRef(null);
@@ -53,11 +57,11 @@ function Navbar() {
     <div className=" flex  justify-between items-center py-4 ">
       <div
         ref={sidebarRef}
-        className={`h-screen bg-white z-40 absolute p-4 left-0 top-0 transition-all duration-300 ease-in-out ${
+        className={` fixed h-screen bg-white z-40  p-0 left-0 top-0 transition-all duration-300 ease-in-out ${
           isOpen ? "w-[200px]" : "w-0"
         }`}
       >
-        <ul className={`${isOpen ? "flex" : "hidden"} flex-col space-y-5`}>
+        <ul className={`${isOpen ? "flex" : "hidden"} flex-col space-y-5 p-4`}>
           <li className="font-semibold">
             <span className="text-blue-700">Glam</span>orique
           </li>
@@ -94,8 +98,21 @@ function Navbar() {
               placeholder="search for you product..."
             />
           </li>
-          <li>
-            <FaRegMoon />
+
+          <li className="flex items-center space-x-7 text-gray-700">
+            <span className="p-3 relative w-6 h-6">
+              {" "}
+              {/* Define specific width and height here */}
+              <Image
+                src={avatar}
+                layout="fill"
+                objectFit="cover"
+                className="absolute rounded-full"
+              />
+            </span>
+            <span>
+              <FaRegMoon />
+            </span>
           </li>
         </ul>
       </div>
