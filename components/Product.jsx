@@ -2,10 +2,9 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import productImg1 from "@/images/p-img-1.webp";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 
-function Product() {
+function Product({ name, brand, img }) {
   const [isHeartFilled, setIsHeartFilled] = useState(false);
 
   const toggleHeart = () => {
@@ -29,13 +28,13 @@ function Product() {
           className="mx-auto"
           width={140}
           height={140}
-          src={productImg1}
-          alt="Product Image"
+          src={`/${img}`}
+          alt=" "
         />
       </div>
       <div className="flex flex-col items-center">
-        <h3 className="font-medium">Jean Jacket</h3>
-        <span className="text-sm font-medium text-gray-500">Dolce gabana</span>
+        <h3 className="font-medium">{name}</h3>
+        <span className="text-sm font-medium text-gray-500">{brand}</span>
         <button className="text-xs text-gray-500 border-2 rounded-lg py-1 px-2 mt-3">
           Show more
         </button>
