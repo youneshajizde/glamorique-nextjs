@@ -6,7 +6,7 @@ import Image from "next/image";
 
 function Offers() {
   return (
-    <div className="mt-16">
+    <div className="mt-[3rem]">
       <h1 className="font-semibold">Special Offers</h1>
       <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3  gap-8 mt-7">
         <div class="relative col-span-1 sm:col-span-1 md:col-span-1  bg-gradient-to-r from-orange-500 to-yellow-500 h-36 rounded-lg">

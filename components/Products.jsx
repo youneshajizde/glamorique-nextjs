@@ -58,6 +58,7 @@ function Products() {
         process.env.NEXT_PUBLIC_STRAPI_URL +
         product?.attributes?.image?.data[0]?.attributes?.url
       }
+      btn={"Show more"}
     />
   ));
   console.log(items);
