@@ -1,32 +1,31 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import offerImg from "@/images/offer-1.png";
 import offerImg2 from "@/images/offer-2.png";
 import offerImg3 from "@/images/offer-3.png";
 import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+
 function Offers() {
   const imgRef1 = useRef(null);
   const imgRef2 = useRef(null);
   const imgRef3 = useRef(null);
+  const textRef1 = useRef(null);
+  const textRef2 = useRef(null);
+  const textRef3 = useRef(null);
 
-  useGSAP(() => {
+  useEffect(() => {
     const animateImage = (imgElement) => {
-      // Exit early if the element is not available
       if (!imgElement) return;
-
-      // Define the initial scale of the element
       gsap.set(imgElement, { scale: 0 });
-
-      // Animate the element to its final scale
       gsap.fromTo(
         imgElement,
         { scale: 0 },
         {
           scale: 1,
-          duration: 2, // Adjust the duration of the appearance as needed
-          ease: "power3.out", // Adjust the easing function as needed
+          duration: 2,
+          ease: "power3.out",
         }
       );
     };
@@ -35,20 +34,42 @@ function Offers() {
     animateImage(imgRef2.current);
     animateImage(imgRef3.current);
   }, []);
+
+  useEffect(() => {
+    const animateText = (textElement) => {
+      if (!textElement) return;
+      gsap.set(textElement, { x: "-100%", opacity: 0 });
+      gsap.fromTo(
+        textElement,
+        { x: "-100%", opacity: 0 },
+        {
+          x: "0%",
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+        }
+      );
+    };
+
+    animateText(textRef1.current);
+    animateText(textRef2.current);
+    animateText(textRef3.current);
+  }, []);
+
   return (
     <div className="mt-[3rem]">
       <h1 className="font-semibold">Special Offers</h1>
-      <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3  gap-8 mt-7">
-        <div class="relative col-span-1 sm:col-span-1 md:col-span-1  bg-gradient-to-r from-orange-500 to-yellow-500 h-36 rounded-lg">
+      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-8 mt-7">
+        <div className="relative col-span-1 sm:col-span-1 md:col-span-1 bg-gradient-to-r from-orange-500 to-yellow-500 h-36 rounded-lg">
           <Image
             ref={imgRef1}
-            src={offerImg} // Path from the public directory
+            src={offerImg}
             alt="Special Offer"
-            width={0} // Adjust width as needed
-            height={0} // Adjust height as needed
+            width={0}
+            height={0}
             className="absolute right-[-8px] top-[-30px] w-36 md:w-28 lg:w-40 sm:hidden md:flex"
           />
-          <div className="p-4 text-white">
+          <div ref={textRef1} className="p-4 text-white">
             <h3 className="text-2xl md:text-sm lg:text-2xl font-semibold">
               Nike caprice
             </h3>
@@ -60,17 +81,17 @@ function Offers() {
           </div>
         </div>
 
-        <div class="relative col-span-1 sm:col-span-1 md:col-span-1 bg-gradient-to-r from-red-500 to-pink-500 h-36 rounded-lg">
+        <div className="relative col-span-1 sm:col-span-1 md:col-span-1 bg-gradient-to-r from-red-500 to-pink-500 h-36 rounded-lg">
           <Image
             ref={imgRef2}
-            src={offerImg2} // Path from the public directory
+            src={offerImg2}
             alt="Special Offer"
-            width={0} // Adjust width as needed
-            height={0} // Adjust height as needed
+            width={0}
+            height={0}
             className="absolute right-[-40px] top-[-55px] w-64 sm:hidden md:flex md:w-48 lg:w-64"
           />
-          <div className="p-4 text-white">
-            <h3 className=" font-semibold text-2xl md:text-sm lg:text-2xl">
+          <div ref={textRef2} className="p-4 text-white">
+            <h3 className="font-semibold text-2xl md:text-sm lg:text-2xl">
               Jacket zara
             </h3>
             <p>
@@ -81,16 +102,16 @@ function Offers() {
           </div>
         </div>
 
-        <div class="relative col-span-1 sm:col-span-1 md:col-span-1 bg-gradient-to-br from-rose-400 to-rose-300 h-36 rounded-lg">
+        <div className="relative col-span-1 sm:col-span-1 md:col-span-1 bg-gradient-to-br from-rose-400 to-rose-300 h-36 rounded-lg">
           <Image
             ref={imgRef3}
-            src={offerImg3} // Path from the public directory
+            src={offerImg3}
             alt="Special Offer"
-            width={0} // Adjust width as needed
-            height={0} // Adjust height as needed
+            width={0}
+            height={0}
             className="absolute right-[-8px] top-[-65px] w-40 sm:w-32 md:w-32 lg:w-40 sm:hidden md:flex"
           />
-          <div className="p-4 text-white">
+          <div ref={textRef3} className="p-4 text-white">
             <h3 className="font-semibold text-2xl md:text-sm lg:text-2xl">
               Climax cruz
               <br /> <span>in pink</span>
