@@ -15,7 +15,7 @@ function Offers() {
   const textRef2 = useRef(null);
   const textRef3 = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const animateImage = (imgElement) => {
       if (!imgElement) return;
       gsap.set(imgElement, { scale: 0 });
@@ -35,7 +35,7 @@ function Offers() {
     animateImage(imgRef3.current);
   }, []);
 
-  useEffect(() => {
+  useGSAP(() => {
     const animateText = (textElement) => {
       if (!textElement) return;
       gsap.set(textElement, { x: "-100%", opacity: 0 });
