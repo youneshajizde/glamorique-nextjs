@@ -68,11 +68,6 @@ function Products() {
       <h1 className="font-semibold">All Products</h1>
 
       <Slider {...settings}>{items}</Slider>
-      {/* <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product /> */}
     </div>
   );
 }
