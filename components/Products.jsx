@@ -11,6 +11,9 @@ function Products() {
     dots: false,
     infinite: true,
     speed: 500,
+    autoplay: true,
+    autoplaySpeed: 1500,
+
     slidesToShow: 6,
     slidesToScroll: 2,
     responsive: [
@@ -68,11 +71,6 @@ function Products() {
       <h1 className="font-semibold">All Products</h1>
 
       <Slider {...settings}>{items}</Slider>
-      {/* <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product /> */}
     </div>
   );
 }
