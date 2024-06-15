@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import offerImg from "@/images/offer-1.png";
 import offerImg2 from "@/images/offer-2.png";
 import offerImg3 from "@/images/offer-3.png";
